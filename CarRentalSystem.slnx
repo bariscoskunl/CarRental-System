@@ -1,3 +1,6 @@
 <Solution>
+  <Project Path="CarRentalSystem.Business/CarRentalSystem.Business.csproj" />
+  <Project Path="CarRentalSystem.DataAccess/CarRentalSystem.DataAccess.csproj" />
+  <Project Path="CarRentalSystem.Entity/CarRentalSystem.Entity.csproj" />
   <Project Path="CarRentalSystem.Web/CarRentalSystem.Web.csproj" />
 </Solution>
