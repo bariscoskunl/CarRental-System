@@ -1,3 +1,4 @@
+using CarRentalSystem.Business.Profiles;
 using CarRentalSystem.DataAccess.Concrete;
 using CarRentalSystem.DataAccess.Contexts;
 using CarRentalSystem.DataAccess.Interfaces;
@@ -13,6 +14,8 @@ options.UseSqlServer(builder.Configuration.GetConnectionString("Default")));
 
 builder.Services.AddScoped<ICarRepository,CarRepository>();
 builder.Services.AddScoped<ICompanyRepository,CompanyRepository>();
+builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
+builder.Services.AddAutoMapper(typeof(CarProfile).Assembly);
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
