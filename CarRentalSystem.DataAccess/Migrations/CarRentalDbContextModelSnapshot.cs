@@ -57,7 +57,7 @@ namespace CarRentalSystem.DataAccess.Migrations
 
                     b.HasIndex("CompanyId");
 
-                    b.ToTable("Branches");
+                    b.ToTable("Branches", (string)null);
                 });
 
             modelBuilder.Entity("CarRentalSystem.Entity.Entities.Car", b =>
@@ -126,7 +126,7 @@ namespace CarRentalSystem.DataAccess.Migrations
                     b.HasIndex("PlateNumber")
                         .IsUnique();
 
-                    b.ToTable("Cars");
+                    b.ToTable("Cars", (string)null);
                 });
 
             modelBuilder.Entity("CarRentalSystem.Entity.Entities.CarImage", b =>
@@ -157,7 +157,7 @@ namespace CarRentalSystem.DataAccess.Migrations
 
                     b.HasIndex("CarId");
 
-                    b.ToTable("CarImages");
+                    b.ToTable("CarImages", (string)null);
                 });
 
             modelBuilder.Entity("CarRentalSystem.Entity.Entities.Comment", b =>
@@ -196,7 +196,7 @@ namespace CarRentalSystem.DataAccess.Migrations
 
                     b.HasIndex("CustomerId");
 
-                    b.ToTable("Comments");
+                    b.ToTable("Comments", (string)null);
                 });
 
             modelBuilder.Entity("CarRentalSystem.Entity.Entities.Company", b =>
@@ -293,7 +293,7 @@ namespace CarRentalSystem.DataAccess.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Companies");
+                    b.ToTable("Companies", (string)null);
                 });
 
             modelBuilder.Entity("CarRentalSystem.Entity.Entities.Customer", b =>
@@ -369,7 +369,7 @@ namespace CarRentalSystem.DataAccess.Migrations
                     b.HasIndex("LicenseNumber")
                         .IsUnique();
 
-                    b.ToTable("Customers");
+                    b.ToTable("Customers", (string)null);
                 });
 
             modelBuilder.Entity("CarRentalSystem.Entity.Entities.Payment", b =>
@@ -407,7 +407,7 @@ namespace CarRentalSystem.DataAccess.Migrations
                     b.HasIndex("RentalId")
                         .IsUnique();
 
-                    b.ToTable("Payments");
+                    b.ToTable("Payments", (string)null);
                 });
 
             modelBuilder.Entity("CarRentalSystem.Entity.Entities.Rental", b =>
@@ -461,7 +461,7 @@ namespace CarRentalSystem.DataAccess.Migrations
 
                     b.HasIndex("ReturnBranchId");
 
-                    b.ToTable("Rentals");
+                    b.ToTable("Rentals", (string)null);
                 });
 
             modelBuilder.Entity("CarRentalSystem.Entity.Entities.Branch", b =>
