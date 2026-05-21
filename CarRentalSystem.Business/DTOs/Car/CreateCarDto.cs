@@ -2,7 +2,7 @@ using CarRentalSystem.Entity.Enums;
 
 namespace CarRentalSystem.Business.DTOs.Car
 {
-    public class CarCreateDto
+    public class CreateCarDto
     {
         public string Brand { get; set; } = null!;
         public string Model { get; set; } = null!;

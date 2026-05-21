@@ -1,6 +1,8 @@
+using CarRentalSystem.Business.DTOs.Branch;
+
 namespace CarRentalSystem.Business.DTOs.Company
 {
-    public class CompanyUpdateDto
+    public class CompanyDto
     {
         public int Id { get; set; }
 
@@ -11,9 +13,10 @@ namespace CarRentalSystem.Business.DTOs.Company
         public string PersonelPhone { get; set; } = null!;
         public string? ProfileImageUrl { get; set; }
 
-        // Şirket
+        // Şirket bilgileri
         public string CompanyName { get; set; } = null!;
         public string? Description { get; set; }
+        public string TaxNumber { get; set; } = null!;
         public string? CompanyImageUrl { get; set; }
 
         // Adres
@@ -29,5 +32,9 @@ namespace CarRentalSystem.Business.DTOs.Company
         public string? Website { get; set; }
 
         public bool IsActive { get; set; }
+        public DateTime CreatedAt { get; set; }
+
+        // İlişkili şubeler
+        public List<BranchDto> Branches { get; set; } = new();
     }
 }

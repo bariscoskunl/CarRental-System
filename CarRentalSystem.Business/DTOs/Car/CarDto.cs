@@ -1,11 +1,12 @@
+using CarRentalSystem.Business.DTOs.Comment;
+using CarRentalSystem.Business.DTOs.CarImage;
 using CarRentalSystem.Entity.Enums;
 
 namespace CarRentalSystem.Business.DTOs.Car
 {
-    public class CarUpdateDto
+    public class CarDto
     {
         public int Id { get; set; }
-
         public string Brand { get; set; } = null!;
         public string Model { get; set; } = null!;
         public int Year { get; set; }
@@ -23,6 +24,12 @@ namespace CarRentalSystem.Business.DTOs.Car
         public DateTime? NextAvailableDate { get; set; }
         public CarStatus Status { get; set; }
 
+        // Şirket
         public int CompanyId { get; set; }
+        public string CompanyName { get; set; } = null!;
+
+        // İlişkili koleksiyonlar
+        public List<CarImageDto> Images { get; set; } = new();
+        public List<CommentDto> Comments { get; set; } = new();
     }
 }
