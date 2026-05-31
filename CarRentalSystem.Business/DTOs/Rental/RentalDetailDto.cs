@@ -18,7 +18,7 @@ namespace CarRentalSystem.Business.DTOs.Rental
         public DateTime CreatedAt { get; set; }
 
         // İlişkili DTO'lar
-        public CarListDto Car { get; set; } = null!;
+        public CarDto Car { get; set; } = null!;
         public CustomerSummaryDto Customer { get; set; } = null!;
         public BranchDto PickupBranch { get; set; } = null!;
         public BranchDto ReturnBranch { get; set; } = null!;
