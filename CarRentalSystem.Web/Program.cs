@@ -1,4 +1,8 @@
+using CarRentalSystem.Business.Mappings;
+using CarRentalSystem.Business.Profiles;
+using CarRentalSystem.DataAccess.Concrete;
 using CarRentalSystem.DataAccess.Contexts;
+using CarRentalSystem.DataAccess.Interfaces;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -8,6 +12,14 @@ builder.Services.AddControllersWithViews();
 
 builder.Services.AddDbContext<CarRentalDbContext>(options =>
 options.UseSqlServer(builder.Configuration.GetConnectionString("Default")));
+
+builder.Services.AddScoped<ICarRepository,CarRepository>();
+builder.Services.AddScoped<ICompanyRepository,CompanyRepository>();
+builder.Services.AddScoped<IRentalRepository,RentalRepository>();
+builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
+builder.Services.AddAutoMapper(typeof(CarProfile).Assembly);
+builder.Services.AddAutoMapper(typeof(RentalProfile).Assembly);
+builder.Services.AddAutoMapper(typeof(PaymentProfile).Assembly);
 
 var app = builder.Build();
 
