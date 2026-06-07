@@ -29,6 +29,10 @@ namespace CarRentalSystem.DataAccess.Configurations
                 .WithMany(c => c.PostedComments)
                 .HasForeignKey(c => c.CustomerId)
                 .OnDelete(DeleteBehavior.Restrict);
+            builder.HasOne(c => c.ParentComment)
+                .WithMany(c => c.Replies)
+                .HasForeignKey(c => c.ParentCommentId)
+                .OnDelete(DeleteBehavior.Restrict);
         }
     }
 }

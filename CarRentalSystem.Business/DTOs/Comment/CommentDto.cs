@@ -14,5 +14,6 @@ namespace CarRentalSystem.Business.DTOs.Comment
         // Hedef (biri dolu olacak)
         public int? CarId { get; set; }
         public int? CompanyId { get; set; }
+        public List<CommentReplyDto> Replies { get; set; }
     }
 }

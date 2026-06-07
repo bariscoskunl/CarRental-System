@@ -45,5 +45,6 @@ namespace CarRentalSystem.Entity.Entities
         public ICollection<Car> Cars { get; set; }
         public ICollection<Comment> Comments { get; set; }
         public ICollection<Branch> Branches { get; set; }
+
     }
 }

@@ -27,6 +27,7 @@ namespace CarRentalSystem.Business.Services.Concrete
         public async Task CreateCarAsync(CreateCarDto dto)
         {
             var car =  _mapper.Map<Car>(dto);
+
             await _repo.AddAsync(car);
         }
 
@@ -42,7 +43,9 @@ namespace CarRentalSystem.Business.Services.Concrete
         public async Task<IEnumerable<CarDto>> GetAllCarsAsync()
         {
             var cars = await _repo.GetAllAsync();
+
             return _mapper.Map<IEnumerable<CarDto>>(cars);
+
         }
 
         public async Task<IEnumerable<CarDto>> GetAvailableCarsAsync()

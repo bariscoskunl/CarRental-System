@@ -16,5 +16,6 @@ namespace CarRentalSystem.DataAccess.Interfaces
         Task  UpdateCarAsync(int id, UpdateCarDto dto);
         Task<bool> DeleteCarAsync(int id);
         Task<bool> SetAvailabilityAsync(int id, bool isAvailable);
+
     }
 }
