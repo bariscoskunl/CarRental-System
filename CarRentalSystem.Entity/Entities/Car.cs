@@ -26,6 +26,7 @@ namespace CarRentalSystem.Entity.Entities
         public FuelType FuelType { get; set; }
         public int EngineCC { get; set; }
         public int SeatCount { get; set; }
+
         //------------------------------//
 
         public decimal DailyPrice { get; set; }

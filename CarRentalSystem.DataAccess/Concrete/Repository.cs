@@ -34,6 +34,7 @@ namespace CarRentalSystem.DataAccess.Concrete
         public async Task<IEnumerable<T>> FindAsync(Expression<Func<T, bool>> predicate)
         {
             return await _context.Set<T>().Where(predicate).ToListAsync();
+          
         }
 
         public async Task<IEnumerable<T>> GetAllAsync()

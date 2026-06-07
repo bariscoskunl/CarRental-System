@@ -17,10 +17,13 @@ namespace CarRentalSystem.Entity.Entities
         public int CustomerId { get; set; }
         public int? CarId { get; set; }
         public int? CompanyId { get; set; }
+        public int? ParentCommentId { get; set; }
 
         // İlişkiler
         public Car? Car { get; set; }
         public Customer Customer { get; set; }
         public Company? Company { get; set; }
+        public Comment? ParentComment { get; set; }           // Ait olduğu ana yorum
+        public ICollection<Comment> Replies { get; set; }
     }
 }
