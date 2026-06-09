@@ -12,7 +12,5 @@ namespace CarRentalSystem.DataAccess.Interfaces
         Task<IEnumerable<Company>> GetCompaniesByCityAsync(string city);
         Task<IEnumerable<Company>> GetCompaniesByCountryAsync(string country);
         Task<IEnumerable<Company>> GetCompaniesByDistrictAsync(string district);
-
-
     }
 }
