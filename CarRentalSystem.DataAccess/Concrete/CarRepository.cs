@@ -20,7 +20,6 @@ namespace CarRentalSystem.DataAccess.Concrete
             _context = context;
         }
 
-
         public async Task<IEnumerable<Car>> GetCarsByBrandAsync(string brand)
         {
             return await _context.Cars.Where(a => a.Brand.ToLower() == brand.ToLower()).ToListAsync();

@@ -17,6 +17,5 @@ namespace CarRentalSystem.DataAccess.Interfaces
         Task<IEnumerable<Car>> GetCarsBySeatCountAsync(int seatCount);
 
 
-
     }
 }
