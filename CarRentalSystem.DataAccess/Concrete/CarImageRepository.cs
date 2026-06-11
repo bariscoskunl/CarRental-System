@@ -41,6 +41,8 @@ namespace CarRentalSystem.DataAccess.Concrete
             return await _context.CarImages.Where(c => c.CarId == carId).OrderByDescending(c => c.IsCoverImage).ToListAsync();
         }
 
+
+
         public async Task<CarImage?> GetCoverImageByCarIdAsync(int carId)
         {
             return await _context.CarImages.FirstOrDefaultAsync(c => c.CarId == carId && c.IsCoverImage);

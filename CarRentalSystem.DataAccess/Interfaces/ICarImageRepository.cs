@@ -11,5 +11,7 @@ namespace CarRentalSystem.DataAccess.Interfaces
     {
         Task<IEnumerable<CarImage>> GetImagesByCarIdAsync(int carId);
         Task<CarImage?> GetCoverImageByCarIdAsync(int carId);
+
+
     }
 }
