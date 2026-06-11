@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace CarRentalSystem.DataAccess.Interfaces
 {
-    public interface ICommentRepository
+    public interface ICommentRepository : IRepository<Comment>
     {
         Task<IEnumerable<Comment>> GetCommentsByCarIdAsync(int carId);
         Task<IEnumerable<Comment>> GetCommentsByCustomerIdAsync(int customerId);

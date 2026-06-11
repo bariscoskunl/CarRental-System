@@ -10,20 +10,42 @@ using System.Threading.Tasks;
 
 namespace CarRentalSystem.DataAccess.Concrete
 {
+    //public class CarImageRepository : Repository<CarImage>, ICarImageRepository
+    //{
+    //    private readonly CarRentalDbContext _context;
+    //    public CarImageRepository(CarRentalDbContext context) : base(context)        
+    //    {
+    //        _context = context;
+    //    }
+    //    public async Task<IEnumerable<CarImage>> GetImagesByCarIdAsync(int carId)
+    //    {
+    //        return await _context.CarImages.Where(c => c.CarId == carId).ToListAsync();
+    //    }
+
+    //    public async Task<CarImage?> GetCoverImageByCarIdAsync(int carId)
+    //    {
+    //       return await _context.CarImages.FirstOrDefaultAsync(c => c.CarId == carId && c.IsCoverImage);
+    //    }       
+
+
+    //}
     public class CarImageRepository : Repository<CarImage>, ICarImageRepository
     {
         private readonly CarRentalDbContext _context;
-        public CarImageRepository(CarRentalDbContext context) : base(context)        
+        public CarImageRepository(CarRentalDbContext context) : base(context)
         {
             _context = context;
         }
         public async Task<IEnumerable<CarImage>> GetImagesByCarIdAsync(int carId)
         {
-            return await _context.CarImages.Where(c => c.CarId == carId).ToListAsync();
+            return await _context.CarImages.Where(c => c.CarId == carId).OrderByDescending(c => c.IsCoverImage).ToListAsync();
         }
+
         public async Task<CarImage?> GetCoverImageByCarIdAsync(int carId)
         {
-           return await _context.CarImages.FirstOrDefaultAsync(c => c.CarId == carId && c.IsCoverImage);
-        }       
+            return await _context.CarImages.FirstOrDefaultAsync(c => c.CarId == carId && c.IsCoverImage);
+        }
+
+
     }
 }

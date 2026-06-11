@@ -1,6 +1,7 @@
 ﻿using CarRentalSystem.Business.DTOs.Comment;
 using CarRentalSystem.Business.Services.Abstract;
 using CarRentalSystem.DataAccess.Concrete;
+using CarRentalSystem.DataAccess.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,9 +12,9 @@ namespace CarRentalSystem.Business.Services.Concrete
 {
     public class CommentService : ICommentService
     {
-        private readonly CommentRepository _repo;
+        private readonly ICommentRepository _repo;
 
-        public CommentService(CommentRepository repo)
+        public CommentService(ICommentRepository repo)
         {
             _repo = repo;
         }

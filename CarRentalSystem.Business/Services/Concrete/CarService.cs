@@ -14,10 +14,10 @@ namespace CarRentalSystem.Business.Services.Concrete
 {
     public class CarService : ICarService
     {
-        private readonly CarRepository _repo;
+        private readonly ICarRepository _repo;
         private readonly IMapper _mapper;
 
-        public CarService(CarRepository repository,IMapper mapper)
+        public CarService(ICarRepository repository,IMapper mapper)
         {
             _repo = repository;
             _mapper = mapper;
