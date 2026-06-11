@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace CarRentalSystem.DataAccess.Interfaces
 {
-    public interface IRentalRepository
+    public interface IRentalRepository : IRepository<Rental>
     {
         Task<Rental?> GetByIdWithDetailsAsync(int id);
         Task<IEnumerable<Rental>> GetByCustomerAsync(int customerId);
