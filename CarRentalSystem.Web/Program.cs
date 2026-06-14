@@ -1,8 +1,11 @@
 using CarRentalSystem.Business.Mappings;
 using CarRentalSystem.Business.Profiles;
+using CarRentalSystem.Business.Services.Abstract;
+using CarRentalSystem.Business.Services.Concrete;
 using CarRentalSystem.DataAccess.Concrete;
 using CarRentalSystem.DataAccess.Contexts;
 using CarRentalSystem.DataAccess.Interfaces;
+using CarRentalSystem.Entity.Entities;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -20,6 +23,9 @@ builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
 builder.Services.AddAutoMapper(typeof(CarProfile).Assembly);
 builder.Services.AddAutoMapper(typeof(RentalProfile).Assembly);
 builder.Services.AddAutoMapper(typeof(PaymentProfile).Assembly);
+
+builder.Services.Configure<EmailSettings>(builder.Configuration.GetSection("EmailSettings"));
+builder.Services.AddScoped<IEmailService, EmailService>();
 
 var app = builder.Build();
 
