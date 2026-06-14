@@ -12,11 +12,7 @@ namespace CarRentalSystem.Entity.Entities
         public int Id { get; set; }
         //------------------------------//
         // Şirket Sahibi bilgileri
-        public string Name { get; set; }
-        public string Surname { get; set; }
-        public string PersonelEmail { get; set; }
-        public string PersonelPhone { get; set; }
-        public string ProfileImageUrl { get; set; }
+        
 
         //------------------------------//
         // Şirket bilgileri
