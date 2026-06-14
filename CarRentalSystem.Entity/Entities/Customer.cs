@@ -10,12 +10,16 @@ namespace CarRentalSystem.Entity.Entities
     public class Customer
     {
         public int Id { get; set; }
-       
+        public string Name { get; set; }
+        public string Surname { get; set; }
+        public string PasswordHash { get; set; }
+
         public string Address { get; set; }
         public string City { get; set; }
         public string Country { get; set; }
-       
-        
+        public string Phone { get; set; }
+        public string Email { get; set; }
+        public string ProfileImageUrl { get; set; }
         //------------------------------//
 
         public string LicenseNumber { get; set; }
@@ -28,4 +32,5 @@ namespace CarRentalSystem.Entity.Entities
         public ICollection<Comment> PostedComments { get; set; }
         public ICollection<Rental> Rentals { get; set; }
     }
+
 }
