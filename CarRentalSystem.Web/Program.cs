@@ -7,6 +7,7 @@ using CarRentalSystem.DataAccess.Contexts;
 using CarRentalSystem.DataAccess.Interfaces;
 using CarRentalSystem.Entity.Entities;
 using Microsoft.AspNetCore.Authentication.Cookies;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -22,6 +23,10 @@ builder.Services.AddScoped<ICompanyRepository,CompanyRepository>();
 builder.Services.AddScoped<IRentalRepository,RentalRepository>();
 builder.Services.AddScoped<ICarImageRepository,CarImageRepository>();
 builder.Services.AddScoped<ICommentRepository,CommentRepository>();
+builder.Services.AddScoped<ICustomerRepository,CustomerRepository>();
+
+builder.Services.AddTransient<IPasswordHasher<Customer>, PasswordHasher<Customer>>();
+builder.Services.AddTransient<IPasswordHasher<Company>, PasswordHasher<Company>>();
 
 
 
@@ -35,7 +40,15 @@ builder.Services.AddAutoMapper(typeof(CarImageProfile).Assembly);
 
 
 builder.Services.Configure<EmailSettings>(builder.Configuration.GetSection("EmailSettings"));
+builder.Services.AddScoped<IAuthService, AuthService>();
+builder.Services.AddScoped<ICarService, CarService>();
+builder.Services.AddScoped<ICompanyService, CompanyService>();
+builder.Services.AddScoped<IRentalService, RentalService>();
+builder.Services.AddScoped<ICarImageService, CarImageService>();
+builder.Services.AddScoped<ICommentService, CommentService>();
+builder.Services.AddScoped<IPaymentService, PaymentService>();
 builder.Services.AddScoped<IEmailService, EmailService>();
+
 
 
 builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
