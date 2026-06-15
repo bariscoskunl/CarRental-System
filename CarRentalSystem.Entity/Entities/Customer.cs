@@ -12,6 +12,8 @@ namespace CarRentalSystem.Entity.Entities
         public int Id { get; set; }
         public string Name { get; set; }
         public string Surname { get; set; }
+        public string PasswordHash { get; set; }
+
         public string Address { get; set; }
         public string City { get; set; }
         public string Country { get; set; }
@@ -30,4 +32,5 @@ namespace CarRentalSystem.Entity.Entities
         public ICollection<Comment> PostedComments { get; set; }
         public ICollection<Rental> Rentals { get; set; }
     }
+
 }

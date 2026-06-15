@@ -15,7 +15,16 @@ namespace CarRentalSystem.DataAccess.Concrete
         private readonly CarRentalDbContext _context;
         public CompanyRepository(CarRentalDbContext context) : base(context)
         {
-            _context = context;    
+            _context = context;
+        }
+
+        public async Task<bool> EmailExistsAsync(string email)
+        {
+            return await _context.Companies.AnyAsync(c => c.PersonelEmail == email);
+        }
+        public async Task<Company?> GetByEmailAsync(string email)
+        {
+            return await _context.Companies.FirstOrDefaultAsync(c => c.PersonelEmail == email);
         }
 
         public async Task<IEnumerable<Company>> GetCompaniesByCityAsync(string city)
